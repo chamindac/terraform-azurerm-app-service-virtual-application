@@ -1,4 +1,4 @@
-# tf-module-azure-arm-service-app-virtual-application
+# terraform-azurerm-service-app-virtual-application
 
 
 Terraform module designed to add VirualApplications on an Azure PaaS Service and Function Apps.
