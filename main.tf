@@ -8,7 +8,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "serviceAppName": {
+    "appServiceName": {
       "type": "string"
     }
     "applicationNames":{
@@ -46,7 +46,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
     {
       "comments": "WebApp VirtualDirectories",
       "type": "Microsoft.Web/sites/config",
-      "name": "[concat(parameters('serviceAppName'), '/web')]",
+      "name": "[concat(parameters('appServiceName'), '/web')]",
       "apiVersion": "2016-08-01",
       "properties": {
         "virtualApplications": "[variables('virtualDirectories')]"
@@ -58,7 +58,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
 DEPLOY
 
   parameters {
-    "serviceAppName"   = "${var.service_app_name}"
+    "appServiceName"   = "${var.app_service_name}"
     "applicationNames" = "${join(",",var.application_names)}"
   }
 
