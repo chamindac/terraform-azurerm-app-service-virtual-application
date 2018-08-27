@@ -1,4 +1,4 @@
-# terraform-azurerm-service-app-virtual-application
+# terraform-azurerm-app-service-virtual-application
 
 
 Terraform module designed to add VirualApplications on an Azure PaaS Service and Function Apps.
@@ -17,7 +17,7 @@ data "azurerm_app_service" "test" {
 
 # Add Virual Applications to Services App slot
 module "eg_test_add_virtualApplication" {
-  source     = "git::https://github.com/transactiveltd/tf-module-azure-arm-service-app-virtual-application.git?ref=v0.1.0"
+  source     = "git::https://github.com/transactiveltd/terraform-azurerm-app-service-virtual-applicationn.git?ref=v0.1.0"
 
   app_service_name    = "${data.azurerm_app_service.test.name}"
   application_names   = ["api","coolapp"]
