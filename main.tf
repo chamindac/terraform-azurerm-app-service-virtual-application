@@ -17,7 +17,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
   },
   "variables": {
       "directoryNames" :"[split(parameters('applicationNames'),',')]",
-      "directoryNamesCount" : "[length(variables('directoryNames'))]"
+      "directoryNamesCount" : "[length(variables('directoryNames'))]",
        "child": {
             "copy": [
                 {
