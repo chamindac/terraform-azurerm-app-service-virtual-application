@@ -1,5 +1,5 @@
 resource "azurerm_template_deployment" "service_app_virtual_application" {
-  name                = "${format("%s-arm-virtual-directories", var.webapp_name)}"
+  name                = "${format("%s-arm-virtual-directories", var.appServiceName)}"
   resource_group_name = "${var.resource_group_name}"
   deployment_mode     = "Incremental"
 
