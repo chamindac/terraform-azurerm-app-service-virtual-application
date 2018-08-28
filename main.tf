@@ -10,7 +10,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
   "parameters": {
     "appServiceName": {
       "type": "string"
-    }
+    },
     "applicationNames":{
       "type": "string"
     }
