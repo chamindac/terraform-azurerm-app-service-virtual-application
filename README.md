@@ -1,7 +1,7 @@
 # terraform-azurerm-app-service-virtual-application
 
 
-Terraform module designed to add VirualApplications on an Azure PaaS Service and Function Apps.
+Terraform module designed to add VirualApplications on an Azure PaaS App Service.
 
 ## Usage
 
@@ -17,7 +17,7 @@ data "azurerm_app_service" "test" {
 
 # Add Virual Applications to Services App slot
 module "eg_test_add_virtualApplication" {
-  source     = "git::https://github.com/transactiveltd/terraform-azurerm-app-service-virtual-applicationn.git?ref=v0.1.0"
+  source     = "git::https://github.com/transactiveltd/terraform-azurerm-app-service-virtual-application.git?ref=0.1.1"
 
   app_service_name    = "${data.azurerm_app_service.test.name}"
   application_names   = ["api","coolapp"]
@@ -25,7 +25,7 @@ module "eg_test_add_virtualApplication" {
 }
 ```
 
-This will run an arm template deployment on the given resource group containing the Service App and add the VirtualApplications to the specified Slot.
+This will run an arm template deployment on the given resource group containing the App Service and adding the VirtualApplications.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -33,10 +33,3 @@ This will run an arm template deployment on the given resource group containing 
 | app_service_name | Service App Name, e.g. `Site01` | string | - | yes |
 | application_names | List of applications to create VirualApplications <br>eg: `["api","coolapps"]`| list | - | yes |
 | resource_group_name | Resource Group name, e.g. `testing-service-rg` | string | - | yes |
-
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| resource_group_name | Resource Group name |
