@@ -17,7 +17,6 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
   },
   "variables": {
       "directoryNames" :"[split(parameters('applicationNames'),',')]",
-      "directoryNamesCount" : "[length(variables('directoryNames'))]",
        "child": {
             "copy": [
                 {
@@ -46,7 +45,7 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
   "resources": [
     {
       "comments": "WebApp VirtualDirectories",
-      "condition": "[greater(variables('directoryNamesCount'),0)]",
+      "condition": "[not(empty(variables('directoryNames')))]",
       "type": "Microsoft.Web/sites/config",
       "name": "[concat(parameters('appServiceName'), '/web')]",
       "apiVersion": "2016-08-01",
