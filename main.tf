@@ -54,8 +54,8 @@ resource "azurerm_template_deployment" "service_app_virtual_application" {
 DEPLOY
 
   parameters {
-    "appServiceName"   = "${var.app_service_name}"
-    "applicationNames" = "${join(",",var.application_names)}"
+    appServiceName   = var.app_service_name
+    applicationNames = "${join(",",var.application_names)}"
   }
 
   depends_on = []
