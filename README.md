@@ -17,7 +17,7 @@ data "azurerm_app_service" "test" {
 
 # Add Virual Applications to Services App slot
 module "eg_test_add_virtualApplication" {
-  source     = "git::https://github.com/transactiveltd/terraform-azurerm-app-service-virtual-application.git?ref=0.1.1"
+  source     = "git::https://github.com/chamindac/terraform-azurerm-app-service-virtual-application.git?ref=0.1.4"
 
   app_service_name    = "${data.azurerm_app_service.test.name}"
   application_names   = ["api","coolapp"]
