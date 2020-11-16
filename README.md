@@ -1,7 +1,7 @@
 # terraform-azurerm-app-service-virtual-application
 
 
-Terraform module designed to add VirualApplications on an Azure PaaS App Service.
+Terraform module designed to add VirualApplications on an Azure PaaS App Service. Modified to support terraform 0.13.5.
 
 ## Usage
 
